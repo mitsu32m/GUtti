@@ -20,7 +20,7 @@
 
 //↓↓↓↓ 3328 西口豪志 記述部(この範囲以外に追加しない)
 
- complex makeComp(real , image)
+ complex makeComp(real , image);
 
 
 //↑↑↑↑ ここまでを 3328 西口豪志 が記述(この範囲以外に追加しない)
