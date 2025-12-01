@@ -23,27 +23,7 @@ typedef struct {
 
 /* プロトタイプ宣言 */
 
-// 1. (real) + (image)j の形の代入 (複素数構造体を生成する) [cite: 32-39]
-complex makeComp(double real, double image);
 
-// 2. R∠θ (極座標形式) の形の代入 [cite: 45-51]
-// ※図では第一引数の変数名が省略されていますが、仕様よりR(大きさ)と推測されます
-complex makeCompRT(double r, double theta);
-
-// 3. 加算 a + b [cite: 57-62]
-complex addComp(complex a, complex b);
-
-// 4. 減算 a - b [cite: 68-74]
-complex subComp(complex a, complex b);
-
-// 5. 定数倍 ka (kは実数) [cite: 80-86]
-complex cmulComp(complex a, double k);
-
-// 6. 乗算 ab [cite: 92-97]
-complex mulComp(complex a, complex b);
-
-// 7. R^2 (大きさの二乗) の出力 |a|^2 [cite: 103-107]
-double getR2(complex a);
 
 // 8. 共役複素数 a* (虚部の符号が異なる複素数) [cite: 113-118]
 complex conjComp(complex a);
@@ -75,8 +55,7 @@ void printCompRT(complex a);
 
 //↓↓↓↓ 3328 西口豪志 記述部(この範囲以外に追加しない)
 
- // 1. (real) + (image)j の形の代入 (複素数構造体を生成する) [cite: 32-39]
-complex makeComp(double real, double image);
+ complex makeComp(real , image);
 
 // 2. R∠θ (極座標形式) の形の代入 [cite: 45-51]
 // ※図では第一引数の変数名が省略されていますが、仕様よりR(大きさ)と推測されます
