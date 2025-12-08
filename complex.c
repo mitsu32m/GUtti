@@ -18,6 +18,10 @@ complex makeComp(double real, double image) {
     return ans;
 }
 
+complex addComp(complex a, complex b){
+     return makeComp( a.real +b.real , a.image + b.image);
+}
+
 
 //↑↑↑↑ ここまでを 3328 西口豪志 が記述(この範囲以外には追加しない)
 
