@@ -12,17 +12,14 @@
 
 //↓↓↓↓ 3327 中野光喜 記述部(雛形まで。この範囲以外には追加しない)
 complex makeCompRT(double r, double theta){
-    complex ans;
-    ans.real = r * cos(theta);
-    ans.image = r * sin(theta);
-    return makeComp(0.0, 0.0);
+
+    return makeComp( r * cos(theta), r * sin(theta));
 }
 //↑↑↑↑ ここまでを 33xx XXXX が記述(この範囲以外には追加しない)
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //↓↓↓↓ 3328 西口豪志 記述部(雛形まで。この範囲以外には追加しない)
-#include "complex.h"
 
 complex makeComp(double real, double image) {
     complex ans;
