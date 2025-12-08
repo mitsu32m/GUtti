@@ -3,6 +3,7 @@
 #include "complex.h"
 #include "testCommon.h"
 
+
 // 複素数構造体を使う時には次の行を活かす
 #include "complex.h"
 #include "testCommon.h"
@@ -16,6 +17,19 @@ void testFirst() {
     testStart("first");
     assertEqualsInt(1 * 1, 1);
     assertEqualsInt(2 * 2, 4);
+}
+void testMakeCompRT() {
+    complex  ans;
+    testStart("makeCompRT");
+    // 3∠0
+    ans = makeCompRT(3.0, 0);
+    assertEqualsComplex(ans, makeComp(3.0, 0));
+    // 2∠π/2
+    ans = makeCompRT(2.0, M_PI/2.0);
+    assertEqualsComplex(ans, makeComp(0, 2.0));
+    // 1∠(-π/4)
+    ans = makeCompRT(1.0, -M_PI/4.0);
+    assertEqualsComplex(ans, makeComp(1/sqrt(2), -1/sqrt(2)));
 }
 
 
@@ -56,7 +70,7 @@ int main() {
     // ↓↓↓↓ 33xx XXXX 記述部(この範囲以外には追加しない)
     testFirst();
     // ↑↑↑↑ ここまでを 33xx XXXX が記述(この範囲以外には追加しない)
-
+    testMakeCompRT();
     //////////////////////////////////////////////////////////////////////////////////////////
 
     // ↓↓↓↓ 33yy YYYY 記述部(この範囲以外には追加しない)
