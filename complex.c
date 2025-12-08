@@ -20,6 +20,8 @@
 
 complex makeComp(double real, double image) {
     complex ans;
+    ans.real = real ;
+    ans.image = image;
     return ans;
 }
 
