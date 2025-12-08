@@ -18,6 +18,7 @@ void testFirst() {
     assertEqualsInt(1 * 1, 1);
     assertEqualsInt(2 * 2, 4);
 }
+
 void testMakeCompRT() {
     complex  ans;
     testStart("makeCompRT");
@@ -31,6 +32,7 @@ void testMakeCompRT() {
     ans = makeCompRT(1.0, -M_PI/4.0);
     assertEqualsComplex(ans, makeComp(1/sqrt(2), -1/sqrt(2)));
 }
+
 
 
 // ↑↑↑↑ ここまでを 3327 中野光喜 が記述(この範囲以外には追加しない)
