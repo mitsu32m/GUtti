@@ -55,8 +55,6 @@ void printCompRT(complex a);
 
 //↓↓↓↓ 3328 西口豪志 記述部(この範囲以外に追加しない)
 
- complex makeComp(real , image);
-
 // 2. R∠θ (極座標形式) の形の代入 [cite: 45-51]
 // ※図では第一引数の変数名が省略されていますが、仕様よりR(大きさ)と推測されます
 complex makeCompRT(double r, double theta);
