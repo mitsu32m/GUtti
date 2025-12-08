@@ -1,6 +1,6 @@
 #ifndef __COMPLEX_H__
 #define __COMPLEX_H__
-
+#include <math.h>
 // 二重読み込みを防ぐために、complex 構造体の定義などはここに記述
 
 
