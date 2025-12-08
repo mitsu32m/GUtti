@@ -57,6 +57,9 @@ void printCompRT(complex a);
 
 // 2. R∠θ (極座標形式) の形の代入 [cite: 45-51]
 // ※図では第一引数の変数名が省略されていますが、仕様よりR(大きさ)と推測されます
+
+complex makeComp(double real, double image);
+
 complex makeCompRT(double r, double theta);
 
 // 3. 加算 a + b [cite: 57-62]
