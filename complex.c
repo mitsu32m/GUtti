@@ -19,7 +19,7 @@
 //↓↓↓↓ 3328 西口豪志 記述部(雛形まで。この範囲以外には追加しない)
 #include "complex.h"
 
-complex makeComp(double r, double i) {
+complex makeComp(double real, double image) {
     complex ans;
     return ans;
 }
