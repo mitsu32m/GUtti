@@ -94,10 +94,14 @@ void testGetR() {
     double ans;
     testStart("getR");
 
-    // 3.4 + 5.6j -> 3.4
-    a = makeComp(3.4, 5.6);
+    
+    a = makeComp(3, 4);
     ans = getR(a);
-    assertEqualsDouble(ans, 3.4);
+    assertEqualsDouble(ans, 5);
+
+    a = makeComp(1, 1);
+    ans = getR(a);
+    assertEqualsDouble(ans, sqrt(2));
 }
 
 // 12. 偏角 (getTheta)
