@@ -18,9 +18,33 @@ complex makeComp(double real, double image) {
     return ans;
 }
 
+
+// 3. 加算 a + b [cite: 57-62]
 complex addComp(complex a, complex b){
      return makeComp( a.real +b.real , a.image + b.image);
 }
+
+// 4. 減算 a - b [cite: 68-74]
+complex subComp(complex a, complex b){
+     return makeComp( a.real -b.real , a.image - b.image);
+}
+
+complex cmulComp(complex a, double k){
+     return makeComp( a.real * k , a.image * k);
+}
+
+complex mulComp(complex a, complex b){
+    double real = a.real * b.real - a.image * b.image;
+    double imag = a.real * b.image + a.image * b.real;
+    return makeComp(real, imag);
+}
+
+
+double getR2(complex a){
+    return a.real * a.real + a.image * a.image;
+}
+
+
 
 
 //↑↑↑↑ ここまでを 3328 西口豪志 が記述(この範囲以外には追加しない)
@@ -37,9 +61,7 @@ complex conjComp(complex a) {
 
 // 7. (補足) 大きさの二乗 |a|^2: getR2 [cite: 75]
 // ※9.の逆数計算で使うため、もし未実装ならここに追加してください
-double getR2(complex a) {
-    return (a.real * a.real) + (a.image * a.image);
-}
+
 
 // 9. 逆数 1/a: invComp [cite: 90]
 // 公式: (a - jb) / (a^2 + b^2) 

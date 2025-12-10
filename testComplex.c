@@ -222,6 +222,107 @@ void testAddComp() {
 }
 
 
+void testsubComp() {
+    complex a, b, ans;
+
+    testStart("subComp");
+
+    // ---- Test 1: (5 + 3j) - (2 + 1j) = (3 + 2j) ----
+    a = makeComp(5.0, 3.0);
+    b = makeComp(2.0, 1.0);
+    ans = subComp(a, b);
+
+    assertEqualsDouble(ans.real, 3.0);
+    assertEqualsDouble(ans.image, 2.0);
+
+    // ---- Test 2: (3.4 + 5.6j) - (1.1 + 2.2j) = (2.3 + 3.4j) ----
+    a = makeComp(3.4, 5.6);
+    b = makeComp(1.1, 2.2);
+    ans = subComp(a, b);
+
+    assertEqualsDouble(ans.real, 2.3);
+    assertEqualsDouble(ans.image, 3.4);
+
+    // ---- Test 3: (0 + 0j) - (2.5 + -3.1j) = (-2.5 + 3.1j) ----
+    a = makeComp(0.0, 0.0);
+    b = makeComp(2.5, -3.1);
+    ans = subComp(a, b);
+
+    assertEqualsDouble(ans.real, -2.5);
+    assertEqualsDouble(ans.image, 3.1);
+}
+
+void testCmulComp() {
+    complex a, ans;
+
+    testStart("cmulComp");
+
+    // ① (1 + 2j) × 3
+    a = makeComp(1.0, 2.0);
+    ans = cmulComp(a, 3.0);
+    assertEqualsComplex(ans, makeComp(3.0, 6.0));
+
+    // ② (-2 + 4j) × 0.5
+    a = makeComp(-2.0, 4.0);
+    ans = cmulComp(a, 0.5);
+    assertEqualsComplex(ans, makeComp(-1.0, 2.0));
+
+    // ③ (0 - 3j) × (-2)
+    a = makeComp(0.0, -3.0);
+    ans = cmulComp(a, -2.0);
+    assertEqualsComplex(ans, makeComp(0.0, 6.0));
+}
+
+void testmulComp() {
+    complex a, b, ans;
+
+    testStart("mulComp");
+
+    // ① (1 + 2j) × (3 + 4j)
+    a = makeComp(1.0, 2.0);
+    b = makeComp(3.0, 4.0);
+    // (1*3 - 2*4) + j(1*4 + 2*3)
+    // = -5 + 10j
+    ans = mulComp(a, b);
+    assertEqualsComplex(ans, makeComp(-5.0, 10.0));
+
+    // ② (-2 + 1j) × (4 - 3j)
+    a = makeComp(-2.0, 1.0);
+    b = makeComp(4.0, -3.0);
+    // real = (-2)*4 - (1)*(-3) = -8 + 3 = -5
+    // imag = (-2)*(-3) + 1*4 = 6 + 4 = 10
+    ans = mulComp(a, b);
+    assertEqualsComplex(ans, makeComp(-5.0, 10.0));
+
+    // ③ (0 + 2j) × (5 + 0j)
+    a = makeComp(0.0, 2.0);
+    b = makeComp(5.0, 0.0);
+    // = 0 + 10j
+    ans = mulComp(a, b);
+    assertEqualsComplex(ans, makeComp(0.0, 10.0));
+}
+
+void testgetR2(){
+   complex a ;
+   double ans;
+
+   testStart("getR2");
+
+   a = makeComp(3.0 , 4.0 );
+   ans = getR2 (a);
+
+   assertEqualsDouble(ans, 25.0);
+
+   a = makeComp(1.5 , 2.5);
+   ans = getR2 (a);
+
+    assertEqualsDouble(ans, 8.5);
+
+}
+
+
+
+
 
 
 // ↑↑↑↑ ここまでを 3328 西口豪志 が記述(この範囲以外には追加しない)
@@ -237,6 +338,11 @@ int main() {
     // ↓↓↓↓ 33xx XXXX 記述部(この範囲以外には追加しない)
     testFirst();
     testAddComp();
+    testsubComp();
+    testCmulComp();
+    testmulComp();
+    testgetR2();
+
     // ↑↑↑↑ ここまでを 33xx XXXX が記述(この範囲以外には追加しない)
     testMakeCompRT();
     testConjComp();     // No.8
